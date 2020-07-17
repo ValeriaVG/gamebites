@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "blog",
-  "description": "Preact's netlify CMS template",
+  "name": "gamebites",
+  "description": "GameBites.dev",
   "version": "0.1.2",
   "license": "MIT",
   "scripts": {
@@ -20,17 +20,35 @@
     "build/*"
   ],
   "devDependencies": {
-    "eslint": "^4.9.0",
+    "@teamsupercell/typings-for-css-modules-loader": "^2.2.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.1.2",
+    "@types/webpack-env": "^1.15.1",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "css-loader": "^3.5.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-preact-pure": "^2.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-config-synacor": "^2.0.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "esm": "^3.2.25",
     "glob": "^7.1.4",
-    "jest": "^21.2.1",
+    "husky": "^4.2.1",
+    "jest": "^25.1.0",
     "jest-preset-preact": "^1.0.0",
+    "lint-staged": "^10.0.7",
     "markdown": "^0.5.0",
     "per-env": "^1.0.2",
-    "preact-cli": "^3.0.0-rc.7",
+    "preact-cli": "^3.0.0-rc.16",
     "preact-render-spy": "^1.2.1",
+    "prettier": "^1.19.1",
     "react-syntax-highlighter": "^12.2.1",
+    "sirv-cli": "^1.0.0-next.3",
+    "typescript": "^3.7.5",
     "webpack-bundle-analyzer": "^3.4.1"
   },
   "dependencies": {
@@ -38,11 +56,12 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "markdown-to-jsx": "^6.10.3",
+    "parse-md": "^2.0.4",
     "preact": "^10.4.6",
     "preact-cli-plugin-netlify": "^1.6.0",
+    "preact-jsx-chai": "^3.0.0",
     "preact-render-to-string": "^5.1.10",
-    "preact-router": "^3.2.1",
-    "parse-md": "^2.0.4"
+    "preact-router": "^3.2.1"
   },
   "jest": {
     "preset": "jest-preset-preact"
@@ -58,5 +77,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/preactjs/preact-netlify.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,md,scss}": "prettier --write",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }
