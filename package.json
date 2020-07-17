@@ -78,7 +78,7 @@
     "type": "git",
     "url": "git+https://github.com/preactjs/preact-netlify.git"
   },
-  "husky": {
+  "__husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
